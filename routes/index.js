@@ -1,3 +1,4 @@
+//Routing entry point
 var express = require('express');
 var router = express.Router();
 
@@ -16,7 +17,7 @@ router.get('/users', user_controller.user_get);
 // Post request for creating users.
 router.post('/create', emailValidator, user_controller.user_create);
 
-// GET request for details of particular user.
+// Post request for details of particular user.
 router.post('/userDetails', user_controller.user_details_get);
 
 

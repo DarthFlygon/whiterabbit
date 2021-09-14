@@ -17,8 +17,7 @@ exports.user_get = function(req, res) {
 };
 
 //---------------------Create new User---------------------//
-/* This function is used to create a new user.
-It also updates 2 way referencing in user*/
+/* This function is used to create a new user.*/
 exports.user_create = function(req, res) 
 {   
     let user = new User(
@@ -44,6 +43,8 @@ exports.user_create = function(req, res)
     });
  };
 
+//---------------------Fetch User Details---------------------//
+/* This function is used to fetch details of a particular user.*/
  exports.user_details_get = function(req, res) {
     User.findById(req.body.id)
         .then(function (user_details) {

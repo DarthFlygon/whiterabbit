@@ -1,4 +1,5 @@
-//Used to check if the user id in the request exists in database//
+//---------------------Email duplicate checker---------------------//
+/* This middleware is used to check for duplicate email on user creation */
 
 var User = require('../models/user');
 

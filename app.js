@@ -23,6 +23,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+//change this variable to use your own mongo db uri
 var mongoDB = 'mongodb+srv://Ajith:derp@cluster0.qh9s1.mongodb.net/test';
 mongoose.connect(mongoDB);
 var db = mongoose.connection;
