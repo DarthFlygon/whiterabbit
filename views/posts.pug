@@ -1,9 +1,0 @@
-extends layout
-block content
-    a(class='button' href='/') Home
-    ul
-    each item in post_list
-      li (#{item.title})
-          |  (#{item.description})
-    else
-      li There are no values

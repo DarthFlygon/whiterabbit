@@ -4,13 +4,12 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var mongoose = require('mongoose');
-const swaggerUi = require('swagger-ui-express');
-const swaggerDocument = require('./swagger.json');
+
 
 
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
-var apiRouter = require('./routes/api');
+//var usersRouter = require('./routes/users');
+//var apiRouter = require('./routes/api');
 
 var app = express();
 
@@ -31,7 +30,7 @@ db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
 
 app.use('/', indexRouter);
-app.use('/api', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

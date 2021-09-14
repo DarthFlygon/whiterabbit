@@ -1,22 +1,23 @@
 var express = require('express');
 var router = express.Router();
 
-var post_controller = require('../controllers/postController');
+var user_controller = require('../controllers/userController');
 
-const { postValidator } = require('../middlewares/postValidator')
+const { emailValidator } = require('../middlewares/emailValidator')
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'CRUD' });
+  res.render('index', { title: 'WhiteRabbit UserForm' });
 });
 
-// GET request for list of all Posts.
-router.get('/posts', post_controller.post_get);
+// GET request for list of all Users.
+router.get('/users', user_controller.user_get);
 
-// Post request for creating posts.
-router.post('/create', post_controller.post_create);
+// Post request for creating users.
+router.post('/create', emailValidator, user_controller.user_create);
 
-// Post request for deleting posts.
-router.post('/delete', post_controller.delete_post);
+// GET request for details of particular user.
+router.post('/userDetails', user_controller.user_details_get);
+
 
 module.exports = router;
