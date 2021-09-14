@@ -1,0 +1,13 @@
+extends layout
+block content
+  a(class='button' href='/posts') View Posts
+  form(action='/create', method='POST')
+    p
+      | title: 
+      input(type='text', name='title', value='')
+      |          description:
+      input(type='text', name='description', value='')
+      |          
+    input(type='submit', value='Submit')
+  
+    
