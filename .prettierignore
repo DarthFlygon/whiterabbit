@@ -1,0 +1,8 @@
+package.json
+package-lock.json
+/node_modules
+.gitignore
+prettierrc.json
+.prettierignore
+.eslintrc.json
+README.md

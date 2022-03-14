@@ -1,24 +1,23 @@
 //Routing entry point
-var express = require('express');
-var router = express.Router();
+var express = require('express')
+var router = express.Router()
 
-var user_controller = require('../controllers/userController');
+var user_controller = require('../controllers/userController')
 
 const { emailValidator } = require('../middlewares/emailValidator')
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'WhiteRabbit UserForm' });
-});
+router.get('/', function (req, res, next) {
+  res.render('index', { title: 'WhiteRabbit UserForm' })
+})
 
 // GET request for list of all Users.
-router.get('/users', user_controller.user_get);
+router.get('/users', user_controller.user_get)
 
 // Post request for creating users.
-router.post('/create', emailValidator, user_controller.user_create);
+router.post('/create', emailValidator, user_controller.user_create)
 
 // Post request for details of particular user.
-router.post('/userDetails', user_controller.user_details_get);
+router.post('/userDetails', user_controller.user_details_get)
 
-
-module.exports = router;
+module.exports = router
